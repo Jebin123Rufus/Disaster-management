@@ -1,0 +1,85 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  backdrop-filter: blur(2px);
+  background: url(disaster1.jpg) no-repeat center center/cover;
+  position: relative;
+  color: white;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formcontainer {
+  height: 440px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  color: black;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  border-bottom: 2px solid #ccc;
+}
+
+.tabs button {
+  flex: 1;
+  padding-bottom: 35px;
+  font-size: 20px;
+  border: none;
+  background: none;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+}
+
+.login {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 14px;
+  padding-left: 20px;
+  margin: 18px 40px 30px 40px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+.create {
+  margin: 0 40px 0 40px;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.create {
+  border: 2px solid mediumspringgreen;
+  background-color: mediumspringgreen;
+  color: white;
+  margin-top: 30px;
+}
+
+.create:hover {
+  background-color: white;
+  color: mediumspringgreen;
+}
