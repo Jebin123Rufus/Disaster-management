@@ -7,7 +7,14 @@ function otpcheck() {
   FormContainer.style.display = "none";
   otpForm.style.display = "block";
 
-  window.addEventListener("load", () => Inputs[0].focus());
+  document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+      if (Inputs.length > 0) {
+        Inputs[0].focus();
+      }
+    }, 100);
+  });
+  
 
   Inputs.forEach((input) => {
     input.addEventListener("input", () => {
@@ -60,7 +67,7 @@ function sendOTP() {
   registerButton.disabled = true;
   registerButton.innerText = "Sending...";
 
-  fetch("http://localhost:5000/send-otp", {
+  fetch("http://localhost:5001/send-otp", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ phone: phoneNumber }),
