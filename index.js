@@ -37,6 +37,27 @@ function otpcheck() {
         button.disabled = true;
       }
     });
+
+    input.addEventListener("keydown", (event) => {
+      if (event.key === "Backspace") {
+        event.preventDefault();
+
+        let currentInput = event.target;
+        let prevInput = inputs[index - 1];
+
+        if (currentInput.value !== "") {
+          currentInput.value = "";
+        } else if (prevInput) {
+          prevInput.focus();
+          prevInput.value = "";
+        }
+
+        if (![...inputs].every((inp) => inp.value.trim() !== "")) {
+          button.classList.remove("active");
+          button.disabled = true;
+        }
+      }
+    });
   });
 }
 
@@ -112,3 +133,4 @@ async function sendOTP() {
     registerButton.innerText = "Send OTP";
   }
 }
+
