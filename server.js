@@ -9,10 +9,7 @@ app.use(express.json());
 app.use(cors());
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGO_URI || "mongodb://127.0.0.1:27017/otp_verification", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
+mongoose.connect(process.env.MONGO_URI || "mongodb://127.0.0.1:27017/otp_verification")
     .then(() => console.log("✅ Connected to MongoDB"))
     .catch(err => console.error("🔴 MongoDB connection error:", err));
 
